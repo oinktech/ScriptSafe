@@ -33,7 +33,7 @@ ScriptSafe 是一個簡單的網站工具，用於禁用瀏覽器的檢視原始
 
 ### 授權
 
-本專案使用 [MIT 許可證](LICENSE.md) 授權。
+本專案使用 [MIT 許可證](https://github.com/oinktech/ScriptSafe/blob/main/LICENSE.md) 授權。
 
 ## English
 
@@ -61,4 +61,4 @@ If you have any suggestions or improvements, please submit a pull request or rep
 
 ### License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/oinktech/ScriptSafe/blob/main/LICENSE.md).
