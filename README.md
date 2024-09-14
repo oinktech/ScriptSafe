@@ -17,9 +17,8 @@ ScriptSafe 是一個簡單的網站工具，用於禁用瀏覽器的檢視原始
 
 1. 將以下代碼添加到您的 HTML 文件中：
 
-    ```html
-    <script src='https://oinktech.github.io/ScriptSafe/script.js'></script>
-    ```
+    <button onclick="copyCode('html-code')">複製代碼</button>
+    <pre><code id="html-code">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
 
 2. 當用戶嘗試檢視原始碼或使用右鍵菜單時，彈出框會顯示警告消息。
 
@@ -45,9 +44,8 @@ ScriptSafe is a simple web tool designed to disable browser functionality such a
 
 1. Add the following code to your HTML file:
 
-    ```html
-    <script src='https://oinktech.github.io/ScriptSafe/script.js'></script>
-    ```
+    <button onclick="copyCode('html-code-en')">Copy Code</button>
+    <pre><code id="html-code-en">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
 
 2. When users attempt to view the source code or use the context menu, a popup will display a warning message.
 
@@ -62,3 +60,14 @@ If you have any suggestions or improvements, please submit a pull request or rep
 ### License
 
 This project is licensed under the [MIT License](https://github.com/oinktech/ScriptSafe/blob/main/LICENSE.md).
+
+<script>
+function copyCode(id) {
+    var code = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(code).then(function() {
+        alert('Code copied to clipboard!');
+    }, function() {
+        alert('Failed to copy code.');
+    });
+}
+</script>
