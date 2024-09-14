@@ -17,8 +17,8 @@ ScriptSafe 是一個簡單的網站工具，用於禁用瀏覽器的檢視原始
 
 1. 將以下代碼添加到您的 HTML 文件中：
 
-    <button onclick="copyCode('html-code')">複製代碼</button>
-    <pre><code id="html-code">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
+    <button class="copy-button" onclick="copyCode('html-code')">複製代碼</button>
+    <pre class="code-block"><code id="html-code">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
 
 2. 當用戶嘗試檢視原始碼或使用右鍵菜單時，彈出框會顯示警告消息。
 
@@ -44,8 +44,8 @@ ScriptSafe is a simple web tool designed to disable browser functionality such a
 
 1. Add the following code to your HTML file:
 
-    <button onclick="copyCode('html-code-en')">Copy Code</button>
-    <pre><code id="html-code-en">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
+    <button class="copy-button" onclick="copyCode('html-code-en')">Copy Code</button>
+    <pre class="code-block"><code id="html-code-en">&lt;script src='https://oinktech.github.io/ScriptSafe/script.js'&gt;&lt;/script&gt;</code></pre>
 
 2. When users attempt to view the source code or use the context menu, a popup will display a warning message.
 
@@ -60,6 +60,38 @@ If you have any suggestions or improvements, please submit a pull request or rep
 ### License
 
 This project is licensed under the [MIT License](https://github.com/oinktech/ScriptSafe/blob/main/LICENSE.md).
+
+<style>
+.copy-button {
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #0099cc;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    overflow-x: auto;
+    margin-top: 8px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    color: #333;
+}
+</style>
 
 <script>
 function copyCode(id) {
