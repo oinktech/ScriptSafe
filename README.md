@@ -25,7 +25,7 @@ ScriptSafe 是一個簡單的網站工具，用於禁用瀏覽器的檢視原始
 
 ### 技術支持
 
-如需技術支持，請聯繫我們的技術支持團隊。您可以通過電子郵件 [support@example.com](mailto:support@example.com) 與我們取得聯繫。
+如需技術支持，請聯繫我們的技術支持團隊。您可以通過電子郵件 [oinktech2024@gmail.com](mailto:oinktech2024@gmail.com) 與我們取得聯繫。
 
 ### 貢獻
 
@@ -53,7 +53,7 @@ ScriptSafe is a simple web tool designed to disable browser functionality such a
 
 ### Technical Support
 
-For technical support, please contact our support team. You can reach us via email at [support@example.com](mailto:support@example.com).
+For technical support, please contact our support team. You can reach us via email at [oinktech2024@gmail.com](mailto:oinktech2024@gmail.com).
 
 ### Contributing
 
