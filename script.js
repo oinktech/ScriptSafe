@@ -1,21 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. 添加動態CSS
-    const style = document.createElement('style');
+const style = document.createElement('style');
     style.innerHTML = `
-        
         #virtualPopup {
             display: none;
             position: fixed;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background-color: #2c2c2c; /* 深灰色 */
-            border: 2px solid #1a1a1a; /* 更深的灰色邊框 */
+            background-color: #2c2c2c;
+            border: 2px solid #1a1a1a;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             border-radius: 8px;
-            color: #e0e0e0; /* 淺灰色文字 */
+            color: #e0e0e0;
             width: 300px;
             text-align: center;
         }
@@ -24,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             margin: 0;
             padding-bottom: 10px;
             font-size: 20px;
-            color: #00aaff; /* 天藍色強調色 */
+            color: #00aaff;
         }
 
         #virtualPopup p {
@@ -36,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             margin-top: 15px;
             padding: 10px 20px;
             border: none;
-            background-color: #00aaff; /* 天藍色按鈕 */
+            background-color: #00aaff;
             color: white;
             cursor: pointer;
             border-radius: 4px;
@@ -45,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         #closePopup:hover {
-            background-color: #0088cc; /* 按鈕 hover 狀態 */
+            background-color: #0088cc;
             transform: scale(1.05);
         }
 
@@ -62,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // 2. 創建虛擬彈出框的 HTML
+    // Create virtual popup HTML
     const overlay = document.createElement('div');
     overlay.id = 'overlay';
     document.body.appendChild(overlay);
@@ -70,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const popup = document.createElement('div');
     popup.id = 'virtualPopup';
     popup.innerHTML = `
-        <h3>警告</h3>
-        <p>檢視原始碼功能已被禁用。</p>
-        <button id="closePopup">關閉</button>
+        <h3>Warning</h3>
+        <p>Viewing source code functionality has been disabled.</p>
+        <button id="closePopup">Close</button>
     `;
     document.body.appendChild(popup);
 
-    // 3. 顯示虛擬彈出框
+    // Show virtual popup
     function showPopup(message) {
         const popupMessage = popup.querySelector('p');
         popupMessage.textContent = message;
@@ -84,31 +81,30 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'block';
     }
 
-    // 4. 隱藏虛擬彈出框
+    // Hide virtual popup
     function hidePopup() {
         popup.style.display = 'none';
         overlay.style.display = 'none';
     }
 
-    // 5. 綁定關閉按鈕的事件
+    // Bind close button event
     document.getElementById('closePopup').addEventListener('click', hidePopup);
 
-    // 6. 禁用 Ctrl+U 和 F12
+    // Disable Ctrl+U and F12
     document.addEventListener('keydown', function(e) {
         if (e.ctrlKey && e.key === 'u') {
             e.preventDefault();
-            showPopup("檢視原始碼功能已被禁用");
+            showPopup("Viewing source code functionality has been disabled");
         }
         
         if (e.key === 'F12') {
             e.preventDefault();
-            showPopup("開發者工具已被禁用");
+            showPopup("Developer tools have been disabled");
         }
     });
 
-    // 7. 禁用右鍵
+    // Disable right-click
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
-        showPopup("右鍵功能已被禁用");
+        showPopup("Right-click functionality has been disabled");
     });
-});
